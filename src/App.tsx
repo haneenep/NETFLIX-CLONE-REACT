@@ -1,16 +1,13 @@
-import Navbar from './components/Navbar'
-import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
+import { Provider } from "react-redux";
+import Body from "./components/Body";
+import appStore from "./utils/appStore";
 
-const App = () => {
+function App() {
   return (
-    <>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-      </Routes>
-    </>
-  )
+    <Provider store={appStore}>
+      <Body />
+    </Provider>
+  );
 }
 
-export default App
+export default App;
